@@ -1,0 +1,10 @@
+ortools
+pydantic>=2
+pytest
+httpx
+langchain-core
+langchain-google-genai
+langgraph
+fastapi
+uvicorn
+python-dotenv
