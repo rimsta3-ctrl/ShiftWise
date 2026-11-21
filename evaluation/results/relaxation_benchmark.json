@@ -1,0 +1,3100 @@
+{
+  "meta": {
+    "date_utc": "2026-11-20 15:49",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cpu_count": 8,
+    "packages": {
+      "ortools": "9.15.6755",
+      "langgraph": "1.2.24",
+      "langchain-google-genai": "4.5.2",
+      "pydantic": "2.14.4"
+    },
+    "seeds": 3,
+    "time_limit_s": 10.0
+  },
+  "summary": {
+    "instances": 192,
+    "initial_status_counts": {
+      "OPTIMAL": 90,
+      "INFEASIBLE": 102
+    },
+    "infeasible": 102,
+    "recovered": 20,
+    "not_recovered_hit_cap": 82,
+    "not_recovered_other": 0,
+    "final_violations_total": 0,
+    "relaxations_per_recovery": {
+      "1": 6,
+      "2": 1,
+      "4": 4,
+      "5": 5,
+      "6": 4
+    },
+    "relaxations_mean": 3.65,
+    "concession_kinds_used": {
+      "consecutive_days": 39,
+      "morning_after_night": 13,
+      "unavailability": 21
+    },
+    "recovered_with_avoidable_concession": 13,
+    "avoidable_concessions_total": 33,
+    "concessions_total": 73
+  },
+  "rows": [
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night"
+      ]
+    },
+    {
+      "n": 5,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 5,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night"
+      ]
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 6,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night"
+      ]
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 8,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night"
+      ]
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night"
+      ]
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": []
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 7,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 1,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night"
+      ]
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": true,
+      "final_status": "OPTIMAL",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "solved",
+      "final_violations": 0,
+      "avoidable": [
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability"
+      ]
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "OPTIMAL"
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 2,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 3,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.15,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 0,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 1,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    },
+    {
+      "n": 10,
+      "days": 14,
+      "min_staff": 3,
+      "max_consecutive": 4,
+      "p_unavailable": 0.3,
+      "seed": 2,
+      "initial_status": "INFEASIBLE",
+      "recovered": false,
+      "final_status": "INFEASIBLE",
+      "relaxations": [
+        "consecutive_days",
+        "consecutive_days",
+        "morning_after_night",
+        "unavailability",
+        "unavailability",
+        "unavailability"
+      ],
+      "stopped_by": "cap",
+      "final_violations": null,
+      "avoidable": null
+    }
+  ]
+}
