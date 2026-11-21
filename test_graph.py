@@ -54,6 +54,14 @@ def test_unknown_status_does_not_trigger_relaxation():
     assert out["relaxations"] == []
 
 
+def test_unknown_status_explanation_does_not_claim_infeasibility():
+    from models import ScheduleResult
+
+    text = template_explanation(ScheduleProblem(employees=TEAM), ScheduleResult(status="UNKNOWN"), [])
+    assert "time limit" in text and "does not prove" in text
+    assert "cannot cover" not in text
+
+
 def test_relax_order_and_exhaustion():
     p = ScheduleProblem(
         employees=["A", "B"], num_days=7, max_consecutive_days=6, min_staff_per_shift=2,
@@ -79,6 +87,36 @@ def test_custom_explainer_receives_relaxations():
     out = run(ScheduleProblem(employees=["A", "B", "C"], max_consecutive_days=3), explain_fn=explain)
     assert out["explanation"] == "custom"
     assert seen["r"] == out["relaxations"] and seen["r"]
+
+
+def _fake_llm_explainer(monkeypatch, content):
+    """build_explainer with the Gemini chat model replaced by a canned AIMessage."""
+    import extractor
+    from langchain_core.messages import AIMessage
+    from langchain_core.runnables import RunnableLambda
+
+    from graph import build_explainer
+
+    monkeypatch.setattr(extractor, "build_chat_model",
+                        lambda model=None, temperature=0.0: RunnableLambda(lambda _: AIMessage(content=content)))
+    return build_explainer()
+
+
+def test_llm_explainer_returns_plain_text_from_content_blocks(monkeypatch):
+    # Regression: Gemini 3 returns a list of content blocks; str() leaked "[{'type': 'text', ...}]"
+    from scheduler import solve
+
+    blocks = [{"type": "text", "text": "All shifts are covered.", "extras": {"signature": "abc"}}]
+    p = ScheduleProblem(employees=TEAM)
+    assert _fake_llm_explainer(monkeypatch, blocks)(p, solve(p), []) == "All shifts are covered."
+
+
+def test_llm_explainer_falls_back_to_template_on_empty_text(monkeypatch):
+    from scheduler import solve
+
+    p = ScheduleProblem(employees=TEAM)
+    r = solve(p)
+    assert _fake_llm_explainer(monkeypatch, "  ")(p, r, []) == template_explanation(p, r, [])
 
 
 def test_template_explanation_lists_relaxations():

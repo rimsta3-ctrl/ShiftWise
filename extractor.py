@@ -3,12 +3,30 @@
 The LLM only *translates*. Its output must pass the Pydantic schema; if it does
 not, the validation error is sent back to the model so it can correct itself.
 """
+import os
+
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 
 from models import ScheduleProblem
 
-load_dotenv()  # reads GOOGLE_API_KEY from a local .env file
+load_dotenv()  # reads GOOGLE_API_KEY (and optionally SHIFTWISE_MODEL) from a local .env file
+
+# gemini-2.5-flash was retired for new API keys; override with SHIFTWISE_MODEL if needed
+DEFAULT_MODEL = os.getenv("SHIFTWISE_MODEL", "gemini-3.8-flash")
+LLM_TIMEOUT_S = 60.0  # per HTTP call; without it a congested API can block a request for minutes
+LLM_MAX_RETRIES = 2  # transport-level retries (429/503), on top of our own validation retries
+
+
+def build_chat_model(model: str | None = None, temperature: float = 0.0):
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
+    return ChatGoogleGenerativeAI(
+        model=model or DEFAULT_MODEL,
+        temperature=temperature,
+        timeout=LLM_TIMEOUT_S,
+        max_retries=LLM_MAX_RETRIES,
+    )
 
 SYSTEM_PROMPT = """You convert a workforce-scheduling request into a structured ScheduleProblem.
 
@@ -18,6 +36,8 @@ Rules:
 - Use employee names exactly as written. If only a headcount is given (e.g. "8 employees"),
   name them "Employee 1", "Employee 2", ...
 - Use the shift names "morning", "afternoon", "night" unless the request defines other shifts.
+- min_staff_per_shift is the exact number of people on every shift: "at least 2 per shift",
+  "2 people per shift" and "each shift needs 2" all mean 2. Leave it at 1 if the request says nothing.
 - Only fill what the request states; leave every other field at its default.
 - Set no_morning_after_night to false only if the request explicitly allows it.
 - Never invent employees, days off or constraints that are not in the request."""
@@ -27,11 +47,9 @@ class ExtractionError(RuntimeError):
     """Raised when the LLM could not produce a valid ScheduleProblem."""
 
 
-def build_extractor(model: str = "gemini-2.5-flash", temperature: float = 0.0):
+def build_extractor(model: str | None = None, temperature: float = 0.0):
     """LangChain runnable: {"request": str} -> ScheduleProblem (needs GOOGLE_API_KEY)."""
-    from langchain_google_genai import ChatGoogleGenerativeAI
-
-    llm = ChatGoogleGenerativeAI(model=model, temperature=temperature)
+    llm = build_chat_model(model, temperature)
     prompt = ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", "{request}")])
     return prompt | llm.with_structured_output(ScheduleProblem)
 

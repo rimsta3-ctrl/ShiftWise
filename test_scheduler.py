@@ -48,6 +48,22 @@ def test_no_morning_after_night():
             assert not (days.get(d) == "night" and days.get(d + 1) == "morning")
 
 
+def test_no_unrequested_shifts():
+    # Regression: with ">=" coverage, minimizing the load gap alone assigned 120 shifts here instead of 21
+    p = ScheduleProblem(employees=[f"E{i}" for i in range(30)], min_staff_per_shift=1)
+    r = solve(p)
+    assert r.status == "OPTIMAL"
+    assert sum(len(days) for days in r.assignments.values()) == 21
+    assert r.shift_gap == 1  # 21 shifts over 30 people: some work 1, some 0
+
+
+def test_custom_shifts_without_morning_or_night():
+    p = ScheduleProblem(employees=TEAM[:5], shifts=["day", "evening"])
+    r = solve(p)
+    assert r.status in OK
+    assert {s for days in r.assignments.values() for s in days.values()} == {"day", "evening"}
+
+
 def test_infeasible_when_understaffed():
     # 2 people cannot cover 3 shifts per day with 1 person each
     p = ScheduleProblem(employees=["Sara", "Ali"], min_staff_per_shift=1)

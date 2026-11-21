@@ -68,10 +68,16 @@ def relax(problem: ScheduleProblem) -> tuple[ScheduleProblem, str] | None:
 # --------------------------------------------------------------------------- explanation
 def template_explanation(problem: ScheduleProblem, result: ScheduleResult, relaxations: list[str]) -> str:
     """Deterministic fallback used when no LLM is available."""
-    if not result.assignments:
+    if result.status == "INFEASIBLE":
         text = (
-            f"No schedule could be found ({result.status}). "
+            "No schedule could be found (INFEASIBLE). "
             "Even after loosening every constraint I was allowed to, the team cannot cover all shifts."
+        )
+    elif not result.assignments:
+        # UNKNOWN = time limit reached without an answer: not a proof that the request is impossible
+        text = (
+            f"No schedule could be found ({result.status}): the solver reached its time limit "
+            "before finding one. This does not prove the request is impossible."
         )
     else:
         text = f"Schedule found ({result.status}); the gap between the most and least loaded employee is {result.shift_gap} shift(s)."
@@ -80,13 +86,12 @@ def template_explanation(problem: ScheduleProblem, result: ScheduleResult, relax
     return text
 
 
-def build_explainer(model: str = "gemini-2.5-flash") -> Callable[[ScheduleProblem, ScheduleResult, list[str]], str]:
+def build_explainer(model: str | None = None) -> Callable[[ScheduleProblem, ScheduleResult, list[str]], str]:
     """LLM explainer (needs GOOGLE_API_KEY). Falls back to the template if the call fails."""
-    from dotenv import load_dotenv
     from langchain_core.prompts import ChatPromptTemplate
-    from langchain_google_genai import ChatGoogleGenerativeAI
 
-    load_dotenv()
+    from extractor import build_chat_model  # also loads .env
+
     chain = (
         ChatPromptTemplate.from_messages(
             [
@@ -99,7 +104,7 @@ def build_explainer(model: str = "gemini-2.5-flash") -> Callable[[ScheduleProble
                 ("human", "Schedule:\n{schedule}\n\nRelaxed constraints:\n{relaxations}"),
             ]
         )
-        | ChatGoogleGenerativeAI(model=model, temperature=0.2)
+        | build_chat_model(model, temperature=0.2)
     )
 
     def explain(problem: ScheduleProblem, result: ScheduleResult, relaxations: list[str]) -> str:
@@ -110,9 +115,12 @@ def build_explainer(model: str = "gemini-2.5-flash") -> Callable[[ScheduleProble
                     "relaxations": "\n".join(relaxations) or "none",
                 }
             )
-            return str(out.content)
+            # .text joins the text blocks: recent Gemini models return content as a list of
+            # blocks (with thought signatures), so str(out.content) would leak the raw structure
+            text = out.text.strip()
         except Exception:  # network, quota, safety filter... never lose the schedule over a narration
-            return template_explanation(problem, result, relaxations)
+            text = ""
+        return text or template_explanation(problem, result, relaxations)
 
     return explain
 
