@@ -6,7 +6,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY models.py scheduler.py extractor.py graph.py api.py ./
+COPY models.py scheduler.py extractor.py graph.py validator.py api.py ./
 
 RUN useradd --create-home appuser
 USER appuser

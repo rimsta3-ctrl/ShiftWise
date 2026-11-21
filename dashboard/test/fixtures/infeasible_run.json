@@ -1,0 +1,411 @@
+[
+ {
+  "type": "start",
+  "t_ms": 0.4
+ },
+ {
+  "type": "node_start",
+  "node": "extract",
+  "iteration": 0,
+  "t_ms": 11.2
+ },
+ {
+  "type": "node_end",
+  "node": "extract",
+  "duration_ms": 0.0,
+  "problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 2,
+   "max_consecutive_days": 5,
+   "unavailable": [
+    {
+     "employee": "Sara",
+     "day": 0
+    }
+   ],
+   "no_morning_after_night": true
+  },
+  "t_ms": 11.2
+ },
+ {
+  "type": "node_start",
+  "node": "solve",
+  "iteration": 0,
+  "t_ms": 11.6
+ },
+ {
+  "type": "node_end",
+  "node": "solve",
+  "duration_ms": 115.4,
+  "status": "INFEASIBLE",
+  "solve_time_s": 0.1007,
+  "shift_gap": null,
+  "assigned_shifts": 0,
+  "t_ms": 127.1
+ },
+ {
+  "type": "route",
+  "decision": "relax",
+  "reason": "INFEASIBLE: loosen one more constraint and solve again",
+  "t_ms": 127.3
+ },
+ {
+  "type": "node_start",
+  "node": "relax",
+  "iteration": 0,
+  "t_ms": 127.7
+ },
+ {
+  "type": "node_end",
+  "node": "relax",
+  "duration_ms": 0.0,
+  "note": "Allowed up to 6 consecutive working days (was 5).",
+  "problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 2,
+   "max_consecutive_days": 6,
+   "unavailable": [
+    {
+     "employee": "Sara",
+     "day": 0
+    }
+   ],
+   "no_morning_after_night": true
+  },
+  "t_ms": 127.7
+ },
+ {
+  "type": "node_start",
+  "node": "solve",
+  "iteration": 1,
+  "t_ms": 127.9
+ },
+ {
+  "type": "node_end",
+  "node": "solve",
+  "duration_ms": 32.1,
+  "status": "INFEASIBLE",
+  "solve_time_s": 0.0297,
+  "shift_gap": null,
+  "assigned_shifts": 0,
+  "t_ms": 160.1
+ },
+ {
+  "type": "route",
+  "decision": "relax",
+  "reason": "INFEASIBLE: loosen one more constraint and solve again",
+  "t_ms": 160.5
+ },
+ {
+  "type": "node_start",
+  "node": "relax",
+  "iteration": 1,
+  "t_ms": 161.0
+ },
+ {
+  "type": "node_end",
+  "node": "relax",
+  "duration_ms": 0.0,
+  "note": "Allowed a morning shift right after a night shift.",
+  "problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 2,
+   "max_consecutive_days": 6,
+   "unavailable": [
+    {
+     "employee": "Sara",
+     "day": 0
+    }
+   ],
+   "no_morning_after_night": false
+  },
+  "t_ms": 161.1
+ },
+ {
+  "type": "node_start",
+  "node": "solve",
+  "iteration": 2,
+  "t_ms": 161.5
+ },
+ {
+  "type": "node_end",
+  "node": "solve",
+  "duration_ms": 31.9,
+  "status": "INFEASIBLE",
+  "solve_time_s": 0.0281,
+  "shift_gap": null,
+  "assigned_shifts": 0,
+  "t_ms": 193.5
+ },
+ {
+  "type": "route",
+  "decision": "relax",
+  "reason": "INFEASIBLE: loosen one more constraint and solve again",
+  "t_ms": 193.9
+ },
+ {
+  "type": "node_start",
+  "node": "relax",
+  "iteration": 2,
+  "t_ms": 194.4
+ },
+ {
+  "type": "node_end",
+  "node": "relax",
+  "duration_ms": 0.0,
+  "note": "Ignored the unavailability of Sara on day 0.",
+  "problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 2,
+   "max_consecutive_days": 6,
+   "unavailable": [],
+   "no_morning_after_night": false
+  },
+  "t_ms": 194.4
+ },
+ {
+  "type": "node_start",
+  "node": "solve",
+  "iteration": 3,
+  "t_ms": 194.8
+ },
+ {
+  "type": "node_end",
+  "node": "solve",
+  "duration_ms": 33.0,
+  "status": "INFEASIBLE",
+  "solve_time_s": 0.0304,
+  "shift_gap": null,
+  "assigned_shifts": 0,
+  "t_ms": 227.7
+ },
+ {
+  "type": "route",
+  "decision": "relax",
+  "reason": "INFEASIBLE: loosen one more constraint and solve again",
+  "t_ms": 228.0
+ },
+ {
+  "type": "node_start",
+  "node": "relax",
+  "iteration": 3,
+  "t_ms": 228.4
+ },
+ {
+  "type": "node_end",
+  "node": "relax",
+  "duration_ms": 0.0,
+  "note": "Lowered minimum staffing to 1 per shift (was 2).",
+  "problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 1,
+   "max_consecutive_days": 6,
+   "unavailable": [],
+   "no_morning_after_night": false
+  },
+  "t_ms": 228.4
+ },
+ {
+  "type": "node_start",
+  "node": "solve",
+  "iteration": 4,
+  "t_ms": 228.7
+ },
+ {
+  "type": "node_end",
+  "node": "solve",
+  "duration_ms": 32.9,
+  "status": "OPTIMAL",
+  "solve_time_s": 0.0286,
+  "shift_gap": 1,
+  "assigned_shifts": 21,
+  "t_ms": 261.6
+ },
+ {
+  "type": "route",
+  "decision": "explain",
+  "reason": "schedule found (OPTIMAL)",
+  "t_ms": 261.8
+ },
+ {
+  "type": "node_start",
+  "node": "explain",
+  "iteration": 4,
+  "t_ms": 262.5
+ },
+ {
+  "type": "node_end",
+  "node": "explain",
+  "duration_ms": 0.0,
+  "explanation": "Schedule found (OPTIMAL); the gap between the most and least loaded employee is 1 shift(s).\nTo get there I had to relax:\n- Allowed up to 6 consecutive working days (was 5).\n- Allowed a morning shift right after a night shift.\n- Ignored the unavailability of Sara on day 0.\n- Lowered minimum staffing to 1 per shift (was 2).",
+  "t_ms": 262.5
+ },
+ {
+  "type": "result",
+  "original_problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 2,
+   "max_consecutive_days": 5,
+   "unavailable": [
+    {
+     "employee": "Sara",
+     "day": 0
+    }
+   ],
+   "no_morning_after_night": true
+  },
+  "problem": {
+   "employees": [
+    "Sara",
+    "Ali",
+    "Mona",
+    "Yassine",
+    "Leila",
+    "Omar"
+   ],
+   "num_days": 7,
+   "shifts": [
+    "morning",
+    "afternoon",
+    "night"
+   ],
+   "min_staff_per_shift": 1,
+   "max_consecutive_days": 6,
+   "unavailable": [],
+   "no_morning_after_night": false
+  },
+  "result": {
+   "status": "OPTIMAL",
+   "assignments": {
+    "Sara": {
+     "0": "morning",
+     "1": "morning",
+     "3": "afternoon"
+    },
+    "Ali": {
+     "0": "night",
+     "1": "night",
+     "2": "afternoon"
+    },
+    "Mona": {
+     "0": "afternoon",
+     "1": "afternoon",
+     "4": "morning",
+     "5": "morning"
+    },
+    "Yassine": {
+     "2": "night",
+     "4": "night",
+     "5": "afternoon",
+     "6": "morning"
+    },
+    "Leila": {
+     "3": "morning",
+     "5": "night",
+     "6": "afternoon"
+    },
+    "Omar": {
+     "2": "morning",
+     "3": "night",
+     "4": "afternoon",
+     "6": "night"
+    }
+   },
+   "shift_gap": 1,
+   "solve_time_s": 0.028573599993251264
+  },
+  "relaxations": [
+   "Allowed up to 6 consecutive working days (was 5).",
+   "Allowed a morning shift right after a night shift.",
+   "Ignored the unavailability of Sara on day 0.",
+   "Lowered minimum staffing to 1 per shift (was 2)."
+  ],
+  "explanation": "Schedule found (OPTIMAL); the gap between the most and least loaded employee is 1 shift(s).\nTo get there I had to relax:\n- Allowed up to 6 consecutive working days (was 5).\n- Allowed a morning shift right after a night shift.\n- Ignored the unavailability of Sara on day 0.\n- Lowered minimum staffing to 1 per shift (was 2).",
+  "explanation_source": "template",
+  "schedule_text": "        |   Mon   Tue   Wed   Thu   Fri   Sat   Sun\nSara    | morni morni   off after   off   off   off\nAli     | night night after   off   off   off   off\nMona    | after after   off   off morni morni   off\nYassine |   off   off night   off night after morni\nLeila   |   off   off   off morni   off night after\nOmar    |   off   off morni night after   off night\n\nstatus=OPTIMAL  shift_gap=1  time=0.029s",
+  "required_shifts": 21,
+  "verification": {
+   "checked": true,
+   "violations": []
+  },
+  "t_ms": 263.2
+ }
+]

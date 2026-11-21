@@ -17,7 +17,11 @@ class ScheduleProblem(BaseModel):
     employees: list[str] = Field(min_length=1)
     num_days: int = Field(default=7, ge=1, le=31)
     shifts: list[str] = Field(default=["morning", "afternoon", "night"], min_length=1)
-    min_staff_per_shift: int = Field(default=1, ge=0, description="Minimum people on every shift, every day")
+    min_staff_per_shift: int = Field(
+        default=1,
+        ge=0,
+        description="Exact number of people on every shift, every day (the solver staffs each shift exactly)",
+    )
     max_consecutive_days: int = Field(default=5, ge=1, description="Max working days in a row per employee")
     unavailable: list[Unavailability] = Field(default_factory=list)
     no_morning_after_night: bool = Field(default=True, description="Forbid a morning shift right after a night shift")
