@@ -149,6 +149,16 @@ def test_api_extraction_failure_is_422():
     assert r.status_code == 422
 
 
+def test_api_llm_outage_is_503():
+    from langchain_core.exceptions import ModelError
+
+    def outage(_):
+        raise ModelError("503 UNAVAILABLE")
+
+    r = _client(outage).post("/plan", json={"request": "8 employees"})
+    assert r.status_code == 503
+
+
 def test_api_validates_input_and_health():
     c = _client(lambda _: ScheduleProblem(employees=["A"]))
     assert c.post("/plan", json={"request": ""}).status_code == 422

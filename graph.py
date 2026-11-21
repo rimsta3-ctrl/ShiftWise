@@ -13,6 +13,7 @@ The LLM only translates (extract) and narrates (explain). The relaxation policy 
 deterministic and ordered from least to most harmful, so behaviour is testable and
 every concession made to reach a schedule is reported to the user.
 """
+import time
 from typing import Callable, TypedDict
 
 from langgraph.graph import END, START, StateGraph
@@ -25,7 +26,8 @@ MAX_RELAXATIONS = 6
 
 class AgentState(TypedDict, total=False):
     request: str
-    problem: ScheduleProblem
+    original_problem: ScheduleProblem  # as extracted, before any relaxation
+    problem: ScheduleProblem  # current version, relaxations applied
     result: ScheduleResult
     relaxations: list[str]  # human-readable log of every constraint we loosened
     explanation: str
@@ -131,14 +133,32 @@ def build_graph(
     explain_fn: Callable[[ScheduleProblem, ScheduleResult, list[str]], str] | None = None,
     solve_fn: Callable[[ScheduleProblem], ScheduleResult] = solve,
     max_relaxations: int = MAX_RELAXATIONS,
+    on_event: Callable[[dict], None] | None = None,
 ):
-    """Compile the agent. All LLM-dependent pieces are injectable so tests need no API key."""
+    """Compile the agent. All LLM-dependent pieces are injectable so tests need no API key.
+
+    `on_event`, if given, receives a dict for every node start/end and every routing decision,
+    which is how the dashboard shows the agent's work live. It never changes the behaviour.
+    """
     if extract_fn is None:
         from extractor import extract as extract_fn  # noqa: PLC0415
     explain_fn = explain_fn or template_explanation
+    emit = on_event or (lambda event: None)
+
+    def traced(name: str, fn: Callable[[AgentState], AgentState], details: Callable[[AgentState, AgentState], dict]):
+        def node(state: AgentState) -> AgentState:
+            emit({"type": "node_start", "node": name, "iteration": len(state.get("relaxations", []))})
+            t0 = time.perf_counter()
+            update = fn(state)
+            emit({"type": "node_end", "node": name, "duration_ms": round((time.perf_counter() - t0) * 1000, 1),
+                  **details(state, update)})
+            return update
+
+        return node
 
     def extract_node(state: AgentState) -> AgentState:
-        return {"problem": extract_fn(state["request"]), "relaxations": []}
+        problem = extract_fn(state["request"])
+        return {"problem": problem, "original_problem": problem, "relaxations": []}
 
     def solve_node(state: AgentState) -> AgentState:
         return {"result": solve_fn(state["problem"])}
@@ -150,21 +170,36 @@ def build_graph(
     def explain_node(state: AgentState) -> AgentState:
         return {"explanation": explain_fn(state["problem"], state["result"], state["relaxations"])}
 
-    def route(state: AgentState) -> str:
-        if state["result"].assignments:  # OPTIMAL or FEASIBLE
-            return "explain"
+    def decide(state: AgentState) -> tuple[str, str]:
+        result = state["result"]
+        if result.assignments:  # OPTIMAL or FEASIBLE
+            return "explain", f"schedule found ({result.status})"
         # UNKNOWN (timeout) is not proof of infeasibility: relaxing would hide a solver limit
-        if state["result"].status != "INFEASIBLE":
-            return "explain"
-        if len(state["relaxations"]) >= max_relaxations or relax(state["problem"]) is None:
-            return "explain"
-        return "relax"
+        if result.status != "INFEASIBLE":
+            return "explain", f"{result.status}: time limit reached, which does not prove infeasibility"
+        if len(state["relaxations"]) >= max_relaxations:
+            return "explain", f"INFEASIBLE and the cap of {max_relaxations} relaxations is reached"
+        if relax(state["problem"]) is None:
+            return "explain", "INFEASIBLE and nothing is left to relax"
+        return "relax", "INFEASIBLE: loosen one more constraint and solve again"
+
+    def route(state: AgentState) -> str:
+        decision, reason = decide(state)
+        emit({"type": "route", "decision": decision, "reason": reason})
+        return decision
 
     g = StateGraph(AgentState)
-    g.add_node("extract", extract_node)
-    g.add_node("solve", solve_node)
-    g.add_node("relax", relax_node)
-    g.add_node("explain", explain_node)
+    g.add_node("extract", traced("extract", extract_node, lambda s, u: {"problem": u["problem"].model_dump()}))
+    g.add_node("solve", traced("solve", solve_node, lambda s, u: {
+        "status": u["result"].status,
+        "solve_time_s": round(u["result"].solve_time_s, 4),
+        "shift_gap": u["result"].shift_gap,
+        "assigned_shifts": sum(len(days) for days in u["result"].assignments.values()),
+    }))
+    g.add_node("relax", traced("relax", relax_node, lambda s, u: {
+        "note": u["relaxations"][-1], "problem": u["problem"].model_dump(),
+    }))
+    g.add_node("explain", traced("explain", explain_node, lambda s, u: {"explanation": u["explanation"]}))
     g.add_edge(START, "extract")
     g.add_edge("extract", "solve")
     g.add_conditional_edges("solve", route, {"relax": "relax", "explain": "explain"})

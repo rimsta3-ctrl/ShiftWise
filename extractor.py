@@ -4,6 +4,7 @@ The LLM only *translates*. Its output must pass the Pydantic schema; if it does
 not, the validation error is sent back to the model so it can correct itself.
 """
 import os
+from typing import Callable
 
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
@@ -54,23 +55,32 @@ def build_extractor(model: str | None = None, temperature: float = 0.0):
     return prompt | llm.with_structured_output(ScheduleProblem)
 
 
-def extract(request: str, chain=None, max_attempts: int = 3) -> ScheduleProblem:
+def extract(
+    request: str,
+    chain=None,
+    max_attempts: int = 3,
+    on_attempt: Callable[[int, str | None], None] | None = None,
+) -> ScheduleProblem:
     """Extract a ScheduleProblem, retrying with the validation error as feedback.
 
     `chain` can be injected (any object with .invoke) so the logic is testable without an API key.
+    `on_attempt(n, error)` is called after each attempt (error is None on success).
     """
     chain = chain or build_extractor()
+    report = on_attempt or (lambda n, error: None)
     feedback = ""
     last_error: Exception | None = None
 
-    for _ in range(max_attempts):
+    for attempt in range(1, max_attempts + 1):
         try:
             result = chain.invoke({"request": request + feedback})
             if result is None:
                 raise ValueError("the model returned no structured output")
+            report(attempt, None)
             return result
         except ValueError as exc:  # pydantic ValidationError and OutputParserException both subclass ValueError
             last_error = exc
+            report(attempt, str(exc))
             feedback = f"\n\nYour previous answer was rejected with this error: {exc}\nFix it and answer again."
 
     raise ExtractionError(f"no valid ScheduleProblem after {max_attempts} attempts: {last_error}") from last_error
